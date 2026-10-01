@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Registry</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <h1>Product Registry</h1>
+        <button id="connect-btn" class="btn btn-outline" type="button">Connect wallet</button>
+    </header>
+
+    <main class="container">
+        <div id="status" class="status hidden"></div>
+
+        <section class="card">
+            <h2>New product</h2>
+            <form id="product-form" class="form">
+                <label>
+                    Name
+                    <input id="name" type="text" maxlength="100" placeholder="Product name" required>
+                </label>
+                <label>
+                    Price (ETH)
+                    <input id="price" type="text" inputmode="decimal" placeholder="0.05" required>
+                </label>
+                <label class="full">
+                    Description
+                    <textarea id="description" rows="3" maxlength="1000" placeholder="Short description"></textarea>
+                </label>
+                <label class="full">
+                    Image URL
+                    <input id="image" type="url" maxlength="500" placeholder="https://example.com/image.jpg">
+                </label>
+                <button id="submit-btn" class="btn" type="submit">Create product</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <div class="card-head">
+                <h2>Products</h2>
+                <button id="refresh-btn" class="btn btn-outline" type="button">Refresh</button>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Creator</th>
+                            <th>Created</th>
+                            <th>Image</th>
+                        </tr>
+                    </thead>
+                    <tbody id="products-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.17.0/ethers.umd.min.js"></script>
+    <script src="./static/js/app.js"></script>
+</body>
+
+</html>

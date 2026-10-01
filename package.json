@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "hardhat node"
+    "node": "hardhat node",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run ./scripts/deploy.cjs --network localhost"
   },
   "keywords": [],
   "author": "",
